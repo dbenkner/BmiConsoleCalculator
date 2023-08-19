@@ -14,11 +14,7 @@ do
     }
     catch
     {
-        Console.WriteLine("An error has occured!");
-    }
-    finally
-    {
-        Console.WriteLine("Please enter height  as a whole number!");
+        Console.WriteLine("Please enter height as a number!");
         height = Convert.ToInt32(Console.ReadLine());
     }
     try
@@ -28,11 +24,7 @@ do
     }
     catch
     {
-        Console.WriteLine("Something went wrong!");
-    }
-    finally
-    {
-        Console.WriteLine("Enter the weight");
+        Console.WriteLine("Enter the weight as a number");
         weight = Convert.ToInt32(Console.ReadLine());
     }
     try
@@ -44,9 +36,6 @@ do
     catch
     {
         Console.WriteLine("Please enter E for English or M for metric");
-    }
-    finally
-    {
         Console.WriteLine("Please enter an E for English or M for metric!");
         engOrMet = Console.ReadLine();
         isEnglish = (engOrMet == "E" || engOrMet == "e") ? true : false;
