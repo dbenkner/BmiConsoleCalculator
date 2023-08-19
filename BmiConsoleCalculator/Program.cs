@@ -5,8 +5,19 @@ int weight;
 int height;
 do
 {
-    Console.WriteLine("Enter the height in inches");
-    height = Convert.ToInt32(Console.ReadLine());
+    try
+    {
+        Console.WriteLine("Enter the height in inches");
+        height = Convert.ToInt32(Console.ReadLine());
+    }
+    catch {
+        Console.WriteLine("An error has occured!");
+    }
+    finally
+    {
+        Console.WriteLine("Please enter height in inches as a whole number!");
+        height = Convert.ToInt32(Console.ReadLine());
+    }
     Console.WriteLine("Enter the weight in pounds");
     weight = Convert.ToInt32(Console.ReadLine());
     var Person1 = new Person(height, weight);
