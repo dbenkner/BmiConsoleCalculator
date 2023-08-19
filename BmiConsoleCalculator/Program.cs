@@ -1,26 +1,29 @@
 ﻿using BmiConsoleCalculator;
 
 bool run = true;
-int weight;
-int height;
+double weight;
+double  height;
+bool isEnglish;
+string engOrMet;
 do
 {
     try
     {
-        Console.WriteLine("Enter the height in inches");
+        Console.WriteLine("Enter the height");
         height = Convert.ToInt32(Console.ReadLine());
     }
-    catch {
+    catch
+    {
         Console.WriteLine("An error has occured!");
     }
     finally
     {
-        Console.WriteLine("Please enter height in inches as a whole number!");
+        Console.WriteLine("Please enter height  as a whole number!");
         height = Convert.ToInt32(Console.ReadLine());
     }
     try
     {
-        Console.WriteLine("Enter the weight in pounds");
+        Console.WriteLine("Enter the weight");
         weight = Convert.ToInt32(Console.ReadLine());
     }
     catch
@@ -29,11 +32,27 @@ do
     }
     finally
     {
-        Console.WriteLine("Enter the weight in pounds");
+        Console.WriteLine("Enter the weight");
         weight = Convert.ToInt32(Console.ReadLine());
     }
+    try
+    {
+        Console.WriteLine("Please enter E for English or M for metric");
+        engOrMet = Console.ReadLine();
+        isEnglish = (engOrMet == "E" || engOrMet == "e") ? true : false;
+    }
+    catch
+    {
+        Console.WriteLine("Please enter E for English or M for metric");
+    }
+    finally
+    {
+        Console.WriteLine("Please enter an E for English or M for metric!");
+        engOrMet = Console.ReadLine();
+        isEnglish = (engOrMet == "E" || engOrMet == "e") ? true : false;
+    }
     var Person1 = new Person(height, weight);
-    var bmi = Person1.getBMI(height, weight);
+    double bmi = Person1.getBMI(height, weight, isEnglish);
     Console.WriteLine($"The height is {Person1.height} and the weight is {Person1.weight} and the bmi {bmi}");
     run = Quit();
 } while (run == true);

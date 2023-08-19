@@ -8,17 +8,18 @@ namespace BmiConsoleCalculator
 {
     internal class Person
     {
-        public int height { get; set; }
-        public int weight { get; set; }
+        public double height { get; set; }
+        public double weight { get; set; }
 
-        public Person(int height, int weight)
+        public Person(double height, double weight)
         {
             this.height = height;
             this.weight = weight;
         }
-        public double getBMI(int height, int weight)
+        public double getBMI(double height, double weight, bool isEng)
         {
-            return Math.Round((weight / Math.Pow(height, 2) * 703), 5);
+
+            return (isEng == true) ? Math.Round((weight / Math.Pow(height, 2) * 703), 5) : Math.Round(weight / Math.Pow((height / 100), 2), 5);
         }
     }
 
