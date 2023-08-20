@@ -30,18 +30,6 @@ do
         Console.WriteLine("Please enter E for English or M for metric");
         engOrMet = Console.ReadLine();
     }
-    if (engOrMet != "E" || engOrMet != "e" || engOrMet != "M" or || engOrMet = "m") {
-        Console.WriteLine("Please enter an E for english or M for metric!");
-        try
-        {
-            engOrMet = Console.ReadLine();
-        }
-        catch
-        {
-            Console.WriteLine("Please enter E for English or M for metric");
-            engOrMet = Console.ReadLine();
-        }
-    }
     isEnglish = (engOrMet == "E" || engOrMet == "e") ? true : false;
     var Person1 = new Person(height, weight);
     double bmi = Person1.getBMI(height, weight, isEnglish);
